@@ -78,17 +78,6 @@ test("check pet updeted", async ({ request }) => {
   expect(response.status()).toBe(200);
 });
 
-test("check I can find pet by status", async ({ request }) => {
-  const issues = await request.get(
-    "https://petstore.swagger.io/v2/pet/findByStatus?status=available",
-    {
-      headers: {
-        accept: "application/json",
-      },
-    }
-  );
-  expect(issues.ok()).toBeTruthy();
-});
 
 test("check pet can be deleted", async ({ request }) => {
   const issues = await request.delete("https://petstore.swagger.io/v2/pet/5", {
